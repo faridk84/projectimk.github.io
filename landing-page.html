@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destina 6</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1 class="logo">DESTINA 6</h1>
+            <nav>
+                <ul>
+                    <li><a href="landing-page.html">Home</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#" class="sign-in">Sign in</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="hero">
+            <h2>START YOUR TRIP with DESTINA6</h2>
+            <div class="search-and-tabs">
+				<!-- Search Section -->
+				
+
+				<!-- Tab Section -->
+				<div class="tab-container">
+					<div class="tabs">
+						<button class="tab active" data-target="destinations">Destinations</button>
+						<button class="tab" data-target="hotels">Hotels</button>
+						<button class="tab" data-target="flights">Flights</button>
+						<button class="tab" data-target="bus">Bus</button>
+					</div>
+					<div class="tab-content">
+						<!-- Content Destinations -->
+						<div class="content active" id="destinations">
+						<div class="search-section">
+							<form class="search-form">
+								<input type="text" placeholder="Search here..." />
+								<button class="search-button" type="submit">Search</button>
+							</form>
+						</div>
+						<div class="filter-container">
+							<!-- Bagian Filter -->
+							<div class="filter-section">
+								<label for="destination-filter">Filter:</label>
+								<select id="destination-filter">
+									<option value="all">All</option>
+									<option value="mountain">Mountain</option>
+									<option value="ocean">Ocean</option>
+									<option value="tourism">Tourism</option>
+								</select>
+							</div>
+
+							<!-- Bagian Hasil Filter -->
+							<div class="filter-results">
+								<div class="result-list" id="destination-list">
+									<!-- Hasil filter akan muncul di sini -->
+								</div>
+							</div>
+						</div>
+						</div>
+						<!-- Content Hotels -->
+						<div class="content" id="hotels">
+						<div class="search-section">
+							<form class="search-form">
+								<input type="text" placeholder="Search here..." />
+								<button class="search-button" type="submit">Search</button>
+							</form>
+						</div>
+							<p>Content for Hotels</p>
+						</div>
+						<!-- Content Flights -->
+						<div class="content" id="flights">
+						<div class="search-section">
+							<form class="search-form">
+								<input type="text" placeholder="Search here..." />
+								<button class="search-button" type="submit">Search</button>
+							</form>
+						</div>
+							<p>Content for Flights</p>
+						</div>
+						<div class="content" id="bus">
+						<div class="search-section">
+							<form class="search-form">
+								<input type="text" placeholder="Search here..." />
+								<button class="search-button" type="submit">Search</button>
+							</form>
+						</div>
+							<p>Content for Bus</p>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+
+        </div>
+    </header>
+    <main>
+        <section class="recommended">
+            <h3>RECOMMENDED</h3>
+            <p>Popular Beach in Indonesia</p>
+            <div class="recommendation-content">
+                <div class="text">
+                    <h4>PANDAWA BEACH</h4>
+                    <p>Pandawa Beach is one of the popular natural tourist destinations located in Bali Province...</p>
+                    <button class="explore-button">Explore more</button>
+                </div>
+                <div class="image">
+                    <img src="pandawa.jpg" alt="Pandawa Beach">
+                </div>
+            </div>
+        </section>
+    </main>
+	
+    <script src="tab.js"></script>
+</body>
+</html>

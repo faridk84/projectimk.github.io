@@ -1,0 +1,566 @@
+/* Pastikan html dan body mengisi seluruh tinggi layar dan tidak ada margin atau padding yang menghalangi */
+html, body {
+    height: 100%;  /* Mengatur tinggi html dan body ke 100% */
+    margin: 0;     /* Menghilangkan margin default */
+    padding: 0;    /* Menghilangkan padding default */
+    overflow-x: hidden; /* Menyembunyikan scroll horizontal jika tidak diperlukan */
+}
+
+/* Background seluruh halaman */
+body {
+    margin: 0;
+    padding: 0;
+    height: auto; /* Mengubah height menjadi auto agar halaman bisa panjang */
+    background-image: url('load.png'); /* Gambar latar belakang untuk seluruh halaman */
+    background-size: cover; /* Gambar mengisi seluruh halaman */
+    background-position: center; /* Memastikan gambar berada di tengah */
+    font-family: 'Gill Sans MT', sans-serif; /* Ganti font dengan lebih jelas */
+    overflow-y: auto; /* Membolehkan halaman untuk scroll vertikal */
+    opacity: 0.8; /* Mengatur opacity background gambar menjadi 80% */
+    text-rendering: optimizeLegibility; /* Mengoptimalkan keterbacaan teks */
+    -webkit-font-smoothing: antialiased; /* Memperhalus rendering font di Webkit */
+    -moz-osx-font-smoothing: grayscale; /* Memperhalus rendering font di Firefox */
+}
+
+.faq-container {
+	width: 700px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* This makes sure the FAQ container is aligned to the left */
+}
+
+.faq-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    border-radius: 5px;
+    width: 100%;  /* Ensure each FAQ item takes up full width of the parent */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.faq-question {
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0;
+    text-align: left; /* Align the question to the left */
+    padding: 15px; /* Padding yang konsisten untuk tombol pertanyaan */
+    background-color: #f4f4f4;
+    border: none; /* Hapus border default */
+    width: 100%;  /* Pastikan lebar selalu 100% */
+    box-sizing: border-box; /* Padding tidak mempengaruhi lebar */
+    transition: background-color 0.3s ease;
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify; /* Justify the answer text */
+    padding: 15px;
+    background-color: #fafafa; /* Light background for the answer */
+    border-top: 1px solid #ddd;
+    width: 100%; /* Pastikan lebar tetap 100% */
+    box-sizing: border-box; /* Pastikan lebar tetap konsisten */
+}
+
+/* Optional: Add hover effect */
+.faq-question:hover {
+    color: #005f73;
+}
+
+/* Style untuk Loader */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan untuk loader */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Pastikan loader di atas semua elemen */
+}
+
+.progress-bar {
+    width: 200px;   /* Lebar progress bar */
+    height: 10px;   /* Tinggi progress bar */
+    background-color: rgba(243, 243, 243, 0.8);  /* Background semi-transparan agar progres terlihat */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    background-color: #4caf50;
+    animation: progress 1.5s ease-in-out forwards; /* Durasi animasi diubah ke 1.5 detik */
+}
+
+@keyframes progress {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Style untuk Konten Tanpa Kotak hitam */
+
+/* Bola Billiar dengan angka 6 */
+.billiard-ball {
+    width: 50px;           /* Ukuran bola */
+    height: 50px;          /* Ukuran bola */
+    background-color: black; /* Warna bola */
+    border-radius: 50%;      /* Membuat bola berbentuk bulat */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Efek bayangan untuk bola */
+    margin-left: 0; /* Menghilangkan jarak */
+    padding-left: 0; /* Menghilangkan padding tambahan */
+}
+
+/* Angka 6 di dalam bola */
+.number {
+    font-size: 30px;        /* Ukuran angka */
+    font-weight: bold;      /* Ketebalan font */
+    color: white;           /* Warna angka */
+    font-family: 'Gill Sans MT', sans-serif;
+}
+
+/* Style untuk Tombol */
+#enterBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold; /* Tombol dengan font tebal */
+    color: black;
+    background: rgba(255, 255, 255, 0.5); /* Transparan dengan sedikit warna */
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Garis batas tombol berwarna hitam transparan */
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    backdrop-filter: blur(5px); /* Memberikan efek blur di belakang tombol agar latar belakang tetap terlihat */
+    transition: all 0.3s ease; /* Menambahkan transisi yang halus untuk perubahan */
+}
+
+/* Efek Hover pada tombol */
+#enterBtn:hover {
+    background-color: black; /* Mengubah background menjadi hitam saat hover */
+    color: white; /* Mengubah warna teks menjadi putih saat hover */
+    border-color: black; /* Mengubah warna border menjadi hitam */
+}
+
+/* Flexbox pada <h1> untuk menyusun teks dan bola */
+h1 {
+    display: flex;
+    align-items: center; /* Vertikal center untuk menyusun bola dengan teks */
+    font-size: 2rem; /* Menyesuaikan ukuran font */
+    font-family: 'Gill Sans MT', sans-serif;
+    justify-content: center; /* Menyusun teks dan bola di tengah */
+    margin: 0; /* Menghilangkan margin default pada <h1> */
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex; /* Gunakan Flexbox untuk mengatur tata letak */
+    justify-content: space-between; /* Letakkan elemen di kiri dan kanan */
+    align-items: center; /* Ratakan elemen secara vertikal */
+    padding: 10px 20px; /* Spasi di sekitar navbar */
+    background-color: rgba(255, 255, 255, 0.8); /* Background transparan */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+}
+
+/* Logo di kiri */
+.logo {
+    font-size: 24px; /* Ukuran font untuk logo */
+    font-weight: bold; /* Tebalkan logo */
+    color: #333; /* Warna teks logo */
+    text-transform: uppercase; /* Ubah teks jadi huruf kapital */
+}
+
+/* Menu navigasi di kanan */
+.navbar ul {
+    list-style: none; /* Hilangkan bullet point */
+    margin: 0; /* Hilangkan margin bawaan */
+    padding: 0; /* Hilangkan padding bawaan */
+    display: flex; /* Atur elemen menjadi horizontal */
+    gap: 20px; /* Jarak antar menu */
+}
+
+.navbar ul li {
+    display: inline; /* Pastikan elemen sejajar */
+}
+
+.navbar ul li a {
+    text-decoration: none; /* Hilangkan garis bawah */
+    color: #333; /* Warna teks menu */
+    font-size: 16px; /* Ukuran font */
+    font-weight: bold; /* Tebalkan teks menu */
+    padding: 10px 15px; /* Tambahkan padding untuk area klik */
+    transition: color 0.3s ease; /* Efek transisi pada hover */
+}
+
+/* Hover effect untuk menu */
+.navbar ul li a:hover {
+    color: #007bff; /* Warna teks saat hover */
+}
+
+/* Tambahan untuk tombol Sign In */
+.navbar ul li .sign-in {
+    background-color: #007bff; /* Warna background */
+    color: white; /* Warna teks */
+    border-radius: 5px; /* Rounded edges */
+    padding: 10px 20px; /* Spasi tombol */
+    transition: background-color 0.3s ease; /* Transisi warna saat hover */
+}
+
+.navbar ul li .sign-in:hover {
+    background-color: #0056b3; /* Warna saat hover */
+}
+
+/* Navbar */
+.navbar {
+    position: fixed; /* Navbar tetap di atas saat scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Warna latar semi-transparan */
+    z-index: 1000; /* Tetap di atas konten lain */
+    display: flex;
+    justify-content: space-between; /* Logo di kiri, menu di kanan */
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;  /* Hero mengisi 100% tinggi layar */
+    background-image: url('background.jpg');  /* Ganti dengan gambar Anda */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;  /* Agar semua elemen dalam hero vertikal */
+	padding: 80px 20px 20px;
+}
+
+.hero h2 {
+    font-size: 3rem; /* Ukuran font besar */
+    font-weight: bold; /* Tebalkan teks */
+    color: white; /* Warna teks */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Bayangan teks untuk kontras */
+    margin: 0; /* Menghilangkan margin default */
+}
+
+
+
+
+
+/* Container utama untuk Search dan Tabs */
+.search-and-tabs {
+	width: 700px;
+    max-width: 800px;  /* Lebar maksimal */
+    margin: 20px auto; /* Pusatkan secara horizontal */
+    background-color: #fff; /* Warna latar putih */
+    border-radius: 8px; /* Sudut melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+    padding: 20px;
+}
+
+/* Bagian Search */
+.search-section {
+	/* margin-top: 20px; */
+    margin-bottom: 20px; /* Jarak di bawah form pencarian */
+    text-align: center; /* Ratakan ke tengah */
+}
+
+.search-form {
+    display: flex;
+    gap: 10px; /* Jarak antar elemen */
+    justify-content: center;
+    align-items: center;
+}
+
+.search-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    width: 500px; /* Lebar input */
+}
+
+.search-form .search-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.search-form .search-button:hover {
+    background-color: #0056b3;
+}
+
+/* Tab Container */
+.tab-container {
+	width: 700px;
+    margin-top: 30px; /* Jarak antara teks dan tab */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tab Buttons */
+.tabs {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+	/* width: 200px; Fixed width for each tab */
+}
+
+.tab.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.tab:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Konten tab */
+.tab-content {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Perbaikan untuk konten tab */
+.content {
+    display: none; /* Hanya aktifkan konten yang sedang dipilih */
+    text-align: center; /* Rata tengah konten jika diperlukan */
+    padding: 20px; /* Tambahkan padding untuk jarak */
+    background-color: #f9f9f9; /* Warna latar belakang */
+    border-radius: 5px; /* Sudut border melengkung */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+    margin-top: 20px; /* Beri jarak dari tab */
+}
+
+.content.active {
+    display: block; /* Tampilkan konten aktif */
+}
+
+/* Filter section */
+.filter-section {
+    margin-bottom: 20px; /* Jarak ke bawah filter */
+    text-align: center; /* Pusatkan filter */
+}
+
+#destination-filter {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Filter results */
+.filter-results {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.result-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px; /* Lebar konten hasil filter */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.result-item:hover {
+    transform: scale(1.05); /* Efek hover */
+}
+
+.result-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.result-item h3 {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #333;
+}
+
+.result-item p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* HP */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column; /* Tampilkan menu secara vertikal */
+        gap: 10px; /* Jarak antar item */
+    }
+}
+
+.hero h2 {
+    font-size: 2rem; /* Ukuran font yang lebih kecil di layar kecil */
+}
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+}
+
+.result-item {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.result-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.result-item h3 {
+    margin: 10px 0 5px;
+}
+
+.result-item p {
+    margin: 0 0 10px;
+}
+
+.result-item .location {
+    display: block;
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.maps-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.maps-button:hover {
+    background-color: #0056b3;
+}
+
+/* Container utama untuk filter dan hasil */
+.filter-container {
+    display: flex;
+    gap: 20px; /* Jarak antara filter dan hasil */
+    margin-top: 20px; /* Jarak antara tab dan filter */
+    width: 100%; /* Pastikan container mengisi seluruh lebar */
+    box-sizing: border-box;
+}
+
+/* Bagian Filter di kiri */
+.filter-section {
+    flex: 1 1 10px; /* Filter akan mengambil lebar minimal 200px dan berkembang jika perlu */
+    margin: 0; /* Pastikan tidak ada margin */
+    padding: 0; /* Pastikan tidak ada padding yang mengganggu */
+}
+
+/* Dropdown dan label diatur dalam kolom */
+.filter-section label {
+    display: block;
+    margin-bottom: 10px; 
+}
+
+.filter-section select {
+    width: 100%; 
+    padding: 8px; /* Atur padding untuk dropdown */
+    margin: 0; /* Pastikan tidak ada margin pada dropdown */
+    box-sizing: border-box; /* Pastikan padding terhitung dalam ukuran dropdown */
+}
+
+/* Bagian Hasil Filter di kanan */
+.filter-results {
+    flex: 3; /* Bagian hasil filter akan mengambil lebih banyak ruang */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+	justify-content: flex-end; /* Memastikan hasilnya dikelompokkan ke kanan */
+    margin-top: 10px; /* Mengurangi jarak antara filter dan hasil */
+}
+
+/* Mengatur setiap item hasil */
+.result-list .result-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: calc(90% - 20px); 
+    box-sizing: border-box;
+    margin-left: auto; /* Margin kiri otomatis untuk meletakkan item di kanan */
+    margin-right: auto; /* Margin kanan otomatis untuk meletakkan item di kanan */
+}
+}
+
+/* Mengatur gambar dalam hasil filter */
+.result-list .result-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.result-list .result-item h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
